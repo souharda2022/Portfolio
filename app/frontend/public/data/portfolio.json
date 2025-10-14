@@ -1,0 +1,144 @@
+{
+  "personal_info": {
+    "name": "Rifat Arman Chowdhury",
+    "title": "Technical Engineer and Data Analyst",
+    "tagline": "Web dev + SQA hybrid focused on clean UI, reliable releases, and measurable growth.",
+    "email": "rifatusho7@gmail.com",
+    "phone": "+88 01939 695 245",
+    "location": "Dhaka, Bangladesh",
+    "github": "https://github.com/RifatC2002",
+    "linkedin": "https://www.linkedin.com/in/rifat-arman-chowdhury-a2483935b",
+    "resumeUrl": "Rifat_Arman_Chowdhury_Resume.pdf"
+  },
+  "achievements": [
+    { "value": "17+", "label": "Pages Launched" },
+    { "value": "38%", "label": "CVR Increase" },
+    { "value": "0", "label": "Critical Escapees" },
+    { "value": "450+", "label": "Students Taught" }
+  ],
+  "education": {
+    "degree": "BSc in Computer Science",
+    "institution": "BRAC University",
+    "duration": "Oct 2021 — Sep 2025",
+    "location": "Dhaka, Bangladesh",
+    "coursework": [
+      "Data Structures & Algorithms",
+      "Software Engineering",
+      "System Design",
+      "Database Management",
+      "Neural Networks",
+      "Artificial Intelligence"
+    ]
+  },
+  "experience": [
+    {
+      "id": 1,
+      "title": "Technical Engineer and Data Analyst",
+      "company": "Obby (USA) — Remote",
+      "duration": "Nov 2024 — Present",
+      "type": "Remote",
+      "highlights": [
+        "Launched 17+ responsive landing pages & website (WordPress/React) with lead forms and accessibility checks (WCAG 2.1 AA).",
+        "Drove +38% conversion rate; sustained Lighthouse Accessibility scores ≥ 98.",
+        "Planned and executed 120+ test cases per release (smoke + regression), triaged defects in Jira, with zero critical escapees.",
+        "Implemented GA4/Pixel events, ran funnel audits, reconciled analytics with platform reports; optimized ad CPA by 24%.",
+        "Tested 28 API endpoints (positive/negative, JSON schema).",
+        "Automated CMS and operations with n8n/Zapier/GoHighLevel; ~70% fewer manual steps and 200+ weekly tasks enabled."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Instructor of English as a Second Language",
+      "company": "Mentors Education, Dhaka",
+      "duration": "Dec 2023 — Present",
+      "type": "On-site",
+      "highlights": [
+        "Taught Spoken English and Grammar to 450+ students; 11 assessments designed.",
+        "Earned 4.85/5 average feedback with a 96% completion rate.",
+        "Strengthened ability to communicate complex technical issues to non-technical audiences."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Fabric Defect Detection System (Thesis)",
+      "category": "Computer Vision",
+      "description": "YOLOv8-style CNN pipeline with EDA, augmentation, and ablations for defect detection.",
+      "technologies": ["Python", "PyTorch", "OpenCV"],
+      "highlights": [
+        "95.7% validation accuracy on ~7k labeled images",
+        "Reproducible training pipeline & experiments"
+      ],
+      "github": "https://github.com/RifatC2002",
+      "demo": "",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "title": "FinAid — Personal Finance Web App",
+      "category": "Full Stack",
+      "description": "Responsive finance tracker with auth, REST APIs, and test coverage.",
+      "technologies": ["React", "Flask", "PostgreSQL"],
+      "highlights": [
+        "Postman collection + SQL reconciliation",
+        "Lighthouse Accessibility 97",
+        "25+ documented test cases"
+      ],
+      "github": "https://github.com/RifatC2002",
+      "demo": "",
+      "image": ""
+    },
+    {
+      "id": 3,
+      "title": "ParkPilot — Parking Management",
+      "category": "Web App",
+      "description": "Login/booking with operator dashboard and analytics events.",
+      "technologies": ["Flask", "React"],
+      "highlights": [
+        "16 PyTest smoke cases (auth/forms)",
+        "Booking submit time reduced by ~40%"
+      ],
+      "github": "https://github.com/RifatC2002",
+      "demo": "",
+      "image": ""
+    },
+    {
+      "id": 4,
+      "title": "HealthLens — Fitness Tracker",
+      "category": "Full Stack",
+      "description": "Workouts and nutrition with charts and standardized error states.",
+      "technologies": ["React", "Flask"],
+      "highlights": [
+        "12 API endpoints validated in Postman",
+        "Lightweight component library"
+      ],
+      "github": "https://github.com/RifatC2002",
+      "demo": "",
+      "image": ""
+    },
+    {
+      "id": 5,
+      "title": "BlinkGPT — Eye Gesture Controlled Chatbot",
+      "category": "Computer Vision",
+      "description": "Gaze/blink input prototype to control a chatbot interface.",
+      "technologies": ["Python", "OpenCV"],
+      "highlights": [
+        "Usability tuning reduced task completion time by ~65%"
+      ],
+      "github": "https://github.com/RifatC2002",
+      "demo": "",
+      "image": ""
+    }
+  ],
+  "skills": {
+    "design": ["Figma", "Photoshop", "Illustrator", "Wireframing", "UI/UX"],
+    "webDevelopment": ["HTML", "CSS", "React", "Tailwind CSS", "MERN (basic)", "Flask", "WordPress", "Framer", "Email HTML/MJML"],
+    "testing": ["Test Plans/Cases", "Boundary/Equivalence", "Postman", "Selenium", "PyTest", "GitHub Actions", "Jira/TestRail"],
+    "programming": ["Python", "JavaScript", "SQL (relational)"],
+    "analytics": ["GA4", "Looker Studio", "Tableau", "Power BI", "Excel"],
+    "marketing": ["Meta Ads", "Google Ads", "Pixel", "Campaigns"],
+    "automation": ["n8n", "Zapier", "GoHighLevel"],
+    "devTools": ["Git", "VS Code", "Docker (basic)"]
+  }
+}
