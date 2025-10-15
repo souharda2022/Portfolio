@@ -14,3 +14,13 @@ dist/
 .env
 .DS_Store
 Thumbs.db
+
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+# Python virtual env inside frontend
+app/frontend/venv/
+app/frontend/.venv/
+app/frontend/env/
