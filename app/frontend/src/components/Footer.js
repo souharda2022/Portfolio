@@ -19,7 +19,6 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">RC</h3>
               <p className="text-gray-400 dark:text-gray-600">
                 Building quality web experiences with attention to detail.
               </p>
@@ -71,11 +70,7 @@ const Footer = () => {
 
           <div className="border-t border-gray-800 dark:border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 dark:text-gray-600 flex items-center gap-2">
-              © {new Date().getFullYear()} {name}. Made with
-              <Heart className="h-4 w-4 text-red-500" fill="currentColor" />
-            </p>
-            <p className="text-gray-400 dark:text-gray-600 text-sm">
-              Designed & Built by {name}
+              © {new Date().getFullYear()} {name}. All rights reserved.
             </p>
           </div>
         </div>
@@ -83,7 +78,7 @@ const Footer = () => {
 
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 p-3 bg:white dark:bg-black text-black dark:text:white rounded-full shadow-lg hover:shadow-xl transition-shadow"
+        className="fixed bottom-8 right-8 p-3 bg:white dark:bg-white text-black dark:text:white rounded-full shadow-lg hover:shadow-xl transition-shadow"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, y: 20 }}

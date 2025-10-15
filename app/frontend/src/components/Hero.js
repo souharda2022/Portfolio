@@ -5,6 +5,8 @@ import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { usePortfolio } from '../contexts/PortfolioContext';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
+import DecryptedText from './ui/SplitText';
+
 
 const flattenSkills = (skillsObj) => {
   if (!skillsObj || typeof skillsObj !== 'object') return [];
@@ -75,10 +77,20 @@ const Hero = () => {
               className="text-5xl md:text-7xl font-bold text-black dark:text-white mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.9 }}
             >
-              {name}
+              {/* DecryptedText on view (runs once) */}
+              <DecryptedText
+                text={name}
+                animateOn="view"
+                revealDirection="center"
+                // carry your h1 styling into the inner text if your component uses it
+                className=""
+                parentClassName=""
+                encryptedClassName=""
+              />
             </motion.h1>
+
 
             <motion.h2
               className="text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-4"

@@ -51,10 +51,10 @@ const About = () => {
                 Background
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                {personalInfo.bio || "I’m a developer passionate about building clean interfaces and robust systems."}
+                {personalInfo.bio || "I’m a web developer and SQA tester who enjoys turning ideas into clean, working products. I care about readable code, helpful UI details, and shipping things that feel solid."}
               </p>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Currently pursuing BSc in Computer Science at BRAC University, I combine technical expertise with a passion for quality assurance. My experience spans from building responsive web applications to implementing comprehensive testing strategies that ensure zero-defect releases.
+                Graduated with a BSc in Computer Science from BRAC University, I combine technical expertise with a passion for quality assurance. I focus on web development and QA, especially in building responsive web apps and designing practical test suites that prevent critical bugs from reaching users.
               </p>
             </motion.div>
 

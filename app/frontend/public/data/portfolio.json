@@ -2,18 +2,18 @@
   "personal_info": {
     "name": "Rifat Arman Chowdhury",
     "title": "Technical Engineer and Data Analyst",
-    "tagline": "Web dev + SQA hybrid focused on clean UI, reliable releases, and measurable growth.",
+    "tagline": "Aspiring Software Engineer | BSc in Computer Science at BRAC University | Passionate about Full Stack Development, Software Engineering, and AI/ML",
     "email": "rifatusho7@gmail.com",
     "phone": "+88 01939 695 245",
     "location": "Dhaka, Bangladesh",
     "github": "https://github.com/RifatC2002",
-    "linkedin": "https://www.linkedin.com/in/rifat-arman-chowdhury-a2483935b",
+    "linkedin": "https://www.linkedin.com/in/rifat-arman-chowdhury",
     "resumeUrl": "Rifat_Arman_Chowdhury_Resume.pdf"
   },
   "achievements": [
-    { "value": "17+", "label": "Pages Launched" },
-    { "value": "38%", "label": "CVR Increase" },
-    { "value": "0", "label": "Critical Escapees" },
+    { "value": "7", "label": "Fullstack Projects" },
+    { "value": "17+", "label": "Landing Pages" },
+    { "value": "120+", "label": "Executed Test Cases / Release" },
     { "value": "450+", "label": "Students Taught" }
   ],
   "education": {
@@ -34,16 +34,12 @@
     {
       "id": 1,
       "title": "Technical Engineer and Data Analyst",
-      "company": "Obby (USA) — Remote",
+      "company": "Obby (USA)",
       "duration": "Nov 2024 — Present",
       "type": "Remote",
       "highlights": [
-        "Launched 17+ responsive landing pages & website (WordPress/React) with lead forms and accessibility checks (WCAG 2.1 AA).",
-        "Drove +38% conversion rate; sustained Lighthouse Accessibility scores ≥ 98.",
-        "Planned and executed 120+ test cases per release (smoke + regression), triaged defects in Jira, with zero critical escapees.",
-        "Implemented GA4/Pixel events, ran funnel audits, reconciled analytics with platform reports; optimized ad CPA by 24%.",
-        "Tested 28 API endpoints (positive/negative, JSON schema).",
-        "Automated CMS and operations with n8n/Zapier/GoHighLevel; ~70% fewer manual steps and 200+ weekly tasks enabled."
+        "Built and launched 17 WordPress/React landing pages; authored test plans/cases; cross-browser/device testing; WCAG 2.1 AA checks; Lighthouse ≥98; CVR +38%..",
+        "Executed 120+ test cases per release with Jira triage; instrumented GA4/Pixel and validated 28 API endpoints with Postman/SQL; 0 critical escapees across 4 releases; CPA −24%; 0 mismatched events in 14 integrity checks."
       ]
     },
     {
@@ -53,9 +49,8 @@
       "duration": "Dec 2023 — Present",
       "type": "On-site",
       "highlights": [
-        "Taught Spoken English and Grammar to 450+ students; 11 assessments designed.",
-        "Earned 4.85/5 average feedback with a 96% completion rate.",
-        "Strengthened ability to communicate complex technical issues to non-technical audiences."
+        "Delivered Spoken English & Grammar lectures to 450+ students; designed 11 assessments; 4.85/5 average feedback.",
+        "Achieved 100% course completion; simplified complex topics for non-technical audiences."
       ]
     }
   ],
@@ -132,13 +127,19 @@
     }
   ],
   "skills": {
-    "design": ["Figma", "Photoshop", "Illustrator", "Wireframing", "UI/UX"],
-    "webDevelopment": ["HTML", "CSS", "React", "Tailwind CSS", "MERN (basic)", "Flask", "WordPress", "Framer", "Email HTML/MJML"],
-    "testing": ["Test Plans/Cases", "Boundary/Equivalence", "Postman", "Selenium", "PyTest", "GitHub Actions", "Jira/TestRail"],
-    "programming": ["Python", "JavaScript", "SQL (relational)"],
-    "analytics": ["GA4", "Looker Studio", "Tableau", "Power BI", "Excel"],
-    "marketing": ["Meta Ads", "Google Ads", "Pixel", "Campaigns"],
-    "automation": ["n8n", "Zapier", "GoHighLevel"],
-    "devTools": ["Git", "VS Code", "Docker (basic)"]
-  }
+  "languagesAndScripting": ["Python", "JavaScript", "TypeScript", "SQL"],
+  "frontendDevelopment": ["Next.js", "React", "Redux"],
+  "uiFrameworks": ["Tailwind CSS", "Bootstrap", "DaisyUI", "Shadcn"],
+  "backendDevelopment": ["Express", "Flask", "Node.js"],
+  "databaseAndORM": ["MySQL", "PostgreSQL", "MongoDB", "Prisma", "Mongoose", "SQLAlchemy"],
+  "cloudAndDevOps": ["Firebase", "Vercel CI/CD"],
+  "testingAndQA": ["Playwright (UI/API)","Selenium/WebDriver","PyTest (unit/integration)",
+"Jest/Vitest (unit)","API Testing (Postman/Newman)","JSON Schema Validation","Accessibility (axe-core)","Visual Regression (Percy/Playwright)"],
+  "toolsAndPlatforms": ["Git", "VS Code", "Postman", "Vercel", "Netlify"],
+  "otherSkills": ["REST API", "JWT", "OAuth2"],
+  "analytics": ["GA4", "Looker Studio", "Tableau", "Power BI", "Excel"],
+  "marketing": ["Meta Ads", "Google Ads", "Pixel", "Campaigns"],
+  "automation": ["n8n", "Zapier", "GoHighLevel"]
+}
+
 }
