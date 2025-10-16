@@ -200,17 +200,27 @@ const Hero = () => {
             {skills.length > 0 && (
               <div
                 className="
-                  relative overflow-hidden marquee-fade py-3
+                  relative overflow-hidden marquee-fade py-5
                   w-screen -mx-[50vw] left-1/2 right-1/2
                 "
-                style={{ position: 'relative' }}
+                style={{ position: 'absolute' }}
               >
                 <div className="marquee-track">
                   {marqueeItems.map((label, i) => (
                     <Badge
                       key={`${label}-${i}`}
                       variant="outline"
-                      className="mx-2 my-2 whitespace-nowrap border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 bg-white/60 dark:bg-black/40 backdrop-blur-sm"
+                      className="
+                        mx-3 my-2 whitespace-nowrap
+                        text-base md:text-lg             /* bigger text */
+                        px-4 md:px-5 py-2 md:py-2.5      /* bigger pill */
+                        rounded-2xl                      /* rounder */
+                        border-2                         /* thicker border */
+                        border-gray-300 dark:border-gray-600
+                        text-gray-800 dark:text-gray-200
+                        bg-white/70 dark:bg-black/40 backdrop-blur-sm
+                        shadow-sm                         /* subtle pop */
+                      "
                     >
                       {label}
                     </Badge>
@@ -218,6 +228,7 @@ const Hero = () => {
                 </div>
               </div>
             )}
+
           </motion.div>
         </div>
       </div>
@@ -225,7 +236,7 @@ const Hero = () => {
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+        transition={{ repeat: Infinity, duration: 8, ease: 'easeInOut' }}
       >
         <button
           onClick={() => scrollToSection('#about')}

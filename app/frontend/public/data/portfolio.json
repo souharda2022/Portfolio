@@ -1,19 +1,20 @@
 {
   "personal_info": {
     "name": "Rifat Arman Chowdhury",
-    "title": "Technical Engineer and Data Analyst",
-    "tagline": "Aspiring Software Engineer | BSc in Computer Science at BRAC University | Passionate about Full Stack Development, Software Engineering, and AI/ML",
-    "email": "rifatusho7@gmail.com",
+    "title": "Technical Engineer & Data Analyst",
+    "tagline": "QA-focused engineer moving toward Full-Stack — BSc in CSE (BRAC University). React/Flask apps, data/ads automation, and practical CV.",
+    "email": "rifatutsho7@gmail.com",
     "phone": "+88 01939 695 245",
     "location": "Dhaka, Bangladesh",
     "github": "https://github.com/RifatC2002",
     "linkedin": "https://www.linkedin.com/in/rifat-arman-chowdhury",
+    "portfolio": "https://rifatc2002.github.io/Portfolio/",
     "resumeUrl": "Rifat_Arman_Chowdhury_Resume.pdf"
   },
-  "achievements": [
-    { "value": "7", "label": "Fullstack Projects" },
-    { "value": "17+", "label": "Landing Pages" },
-    { "value": "120+", "label": "Executed Test Cases / Release" },
+   "achievements": [
+    { "value": "7", "label": "Full-Stack Projects" },
+    { "value": "17+", "label": "Landing Pages Shipped" },
+    { "value": "120+", "label": "Test Cases per Release" },
     { "value": "450+", "label": "Students Taught" }
   ],
   "education": {
@@ -33,113 +34,47 @@
   "experience": [
     {
       "id": 1,
-      "title": "Technical Engineer and Data Analyst",
+      "title": "Technical Engineer & Data Analyst",
       "company": "Obby (USA)",
       "duration": "Nov 2024 — Present",
       "type": "Remote",
       "highlights": [
-        "Built and launched 17 WordPress/React landing pages; authored test plans/cases; cross-browser/device testing; WCAG 2.1 AA checks; Lighthouse ≥98; CVR +38%..",
-        "Executed 120+ test cases per release with Jira triage; instrumented GA4/Pixel and validated 28 API endpoints with Postman/SQL; 0 critical escapees across 4 releases; CPA −24%; 0 mismatched events in 14 integrity checks."
+        "Built 17+ responsive landing pages and full websites using React, Tailwind CSS, shadcn/ui, and Redux.",
+        "Created site forms with QuillForms; authored test plans; executed cross-browser/device QA and production fixes.",
+        "Implemented Meta Pixel and GA4; launched/monitored Meta & Google Ads; built weekly performance reports.",
+        "Automated form-submission alerts to Slack, Google Voice, and email; set up content/onboarding automations."
       ]
     },
     {
       "id": 2,
       "title": "Instructor of English as a Second Language",
       "company": "Mentors Education, Dhaka",
-      "duration": "Dec 2023 — Present",
+      "duration": "Nov 2023 — Present",
       "type": "On-site",
       "highlights": [
-        "Delivered Spoken English & Grammar lectures to 450+ students; designed 11 assessments; 4.85/5 average feedback.",
-        "Achieved 100% course completion; simplified complex topics for non-technical audiences."
+        "Delivered Spoken English & Grammar classes to 450+ students; designed 11 lesson plans and assessments.",
+        "Introduced digital attendance and progress tracking; facilitated mock tests and speaking practice."
       ]
     }
   ],
-  "projects": [
-    {
-      "id": 1,
-      "title": "Fabric Defect Detection System (Thesis)",
-      "category": "Computer Vision",
-      "description": "YOLOv8-style CNN pipeline with EDA, augmentation, and ablations for defect detection.",
-      "technologies": ["Python", "PyTorch", "OpenCV"],
-      "highlights": [
-        "95.7% validation accuracy on ~7k labeled images",
-        "Reproducible training pipeline & experiments"
-      ],
-      "github": "https://github.com/RifatC2002",
-      "demo": "",
-      "image": ""
-    },
-    {
-      "id": 2,
-      "title": "FinGuard — Personal Finance Web App",
-      "category": "Full Stack",
-      "description": "Responsive finance tracker with auth, REST APIs, and test coverage.",
-      "technologies": ["React", "Flask", "PostgreSQL"],
-      "highlights": [
-        "Postman collection + SQL reconciliation",
-        "Lighthouse Accessibility 97",
-        "25+ documented test cases"
-      ],
-      "github": "https://github.com/RifatC2002",
-      "demo": "",
-      "image": ""
-    },
-    {
-      "id": 3,
-      "title": "ParkPilot — Parking Management",
-      "category": "Web App",
-      "description": "Login/booking with operator dashboard and analytics events.",
-      "technologies": ["Flask", "React"],
-      "highlights": [
-        "16 PyTest smoke cases (auth/forms)",
-        "Booking submit time reduced by ~40%"
-      ],
-      "github": "https://github.com/RifatC2002",
-      "demo": "",
-      "image": ""
-    },
-    {
-      "id": 4,
-      "title": "HealthLens — Fitness Tracker",
-      "category": "Full Stack",
-      "description": "Workouts and nutrition with charts and standardized error states.",
-      "technologies": ["React", "Flask"],
-      "highlights": [
-        "12 API endpoints validated in Postman",
-        "Lightweight component library"
-      ],
-      "github": "https://github.com/RifatC2002",
-      "demo": "",
-      "image": ""
-    },
-    {
-      "id": 5,
-      "title": "BlinkGPT — Eye Gesture Controlled Chatbot",
-      "category": "Computer Vision",
-      "description": "Gaze/blink input prototype to control a chatbot interface.",
-      "technologies": ["Python", "OpenCV"],
-      "highlights": [
-        "Usability tuning reduced task completion time by ~65%"
-      ],
-      "github": "https://github.com/RifatC2002",
-      "demo": "",
-      "image": ""
-    }
-  ],
+  "projects": [ { "id": 1, "title": "Fabric Defect Detection System (Thesis)", "category": "Computer Vision", "description": "YOLOv8-style CNN pipeline with EDA, augmentation, and ablations for defect detection.", "technologies": ["Python", "PyTorch", "OpenCV"], "highlights": [ "95.7% validation accuracy on ~7k labeled images", "Reproducible training pipeline & experiments" ], "github": "https://github.com/RifatC2002/Fabric-Defect-Detection-System", "demo": "", "image": "" }, { "id": 2, "title": "FinGuard — Personal Finance Web App", "category": "Full Stack", "description": "Responsive finance tracker with auth, REST APIs, and test coverage.", "technologies": ["React", "Flask", "PostgreSQL"], "highlights": [ "Postman collection + SQL reconciliation", "Lighthouse Accessibility 97", "25+ documented test cases" ], "github": "https://github.com/RifatC2002/FinGuard", "demo": "", "image": "" }, { "id": 3, "title": "ParkPilot — Parking Management", "category": "Web App", "description": "Login/booking with operator dashboard and analytics events.", "technologies": ["Flask", "React"], "highlights": [ "16 PyTest smoke cases (auth/forms)", "Booking submit time reduced by ~40%" ], "github": "https://github.com/RifatC2002/ParkPilot", "demo": "", "image": "" }, { "id": 4, "title": "HealthLens — Fitness Tracker", "category": "Full Stack", "description": "Workouts and nutrition with charts and standardized error states.", "technologies": ["React", "Flask"], "highlights": [ "12 API endpoints validated in Postman", "Lightweight component library" ], "github": "https://github.com/RifatC2002/HealthLens", "demo": "", "image": "" }, { "id": 5, "title": "BlinkGPT — Eye Gesture Controlled Chatbot", "category": "Computer Vision", "description": "Gaze/blink input prototype to control a chatbot interface.", "technologies": ["Python", "OpenCV"], "highlights": [ "Usability tuning reduced task completion time by ~65%" ], "github": "https://github.com/RifatC2002/BlinkGPT", "demo": "", "image": "" } ],
   "skills": {
-  "languagesAndScripting": ["Python", "JavaScript", "TypeScript", "SQL"],
-  "frontendDevelopment": ["Next.js", "React", "Redux"],
-  "uiFrameworks": ["Tailwind CSS", "Bootstrap", "DaisyUI", "Shadcn"],
-  "backendDevelopment": ["Express", "Flask", "Node.js"],
-  "databaseAndORM": ["MySQL", "PostgreSQL", "MongoDB", "Prisma", "Mongoose", "SQLAlchemy"],
-  "cloudAndDevOps": ["Firebase", "Vercel CI/CD"],
-  "testingAndQA": ["Playwright (UI/API)","Selenium/WebDriver","PyTest (unit/integration)",
-"Jest/Vitest (unit)","API Testing (Postman/Newman)","JSON Schema Validation","Accessibility (axe-core)","Visual Regression (Percy/Playwright)"],
-  "toolsAndPlatforms": ["Git", "VS Code", "Postman", "Vercel", "Netlify"],
-  "otherSkills": ["REST API", "JWT", "OAuth2"],
-  "analytics": ["GA4", "Looker Studio", "Tableau", "Power BI", "Excel"],
-  "marketing": ["Meta Ads", "Google Ads", "Pixel", "Campaigns"],
-  "automation": ["n8n", "Zapier", "GoHighLevel"]
-}
-
+    "languagesAndScripting": ["Python", "JavaScript", "SQL"],
+    "frontendDevelopment": ["React", "Tailwind CSS", "Next.js", "HTML", "CSS", "Redux"],
+    "backendDevelopment": ["Node.js", "Express", "Flask", "REST"],
+    "databaseAndORM": ["PostgreSQL", "MySQL", "MongoDB"],
+    "cloudAndDevOps": ["Vercel", "Firebase", "CI/CD"],
+    "testingAndQA": [
+      "Test planning & case design",
+      "Requirements traceability & risk-based testing",
+      "API testing (Postman)",
+      "Web/UI automation (Selenium/WebDriver)",
+      "Python scripting & PyTest",
+      "SQL/data validation",
+      "CI/CD test pipelines (GitHub Actions)",
+      "Defect management & triage (Jira/TestRail)"
+    ],
+    "tools": ["Git", "VS Code", "GA4", "Looker Studio", "Tableau", "Power BI", "Excel"],
+    "other": ["n8n","Zapier","GoHighLevel","JWT", "OAuth2", "Email HTML/MJML", "Figma"]
+  }
 }

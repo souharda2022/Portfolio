@@ -5,21 +5,14 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import {
   Code,
-  Palette,
   TestTube,
   Database,
-  BarChart,
-  Megaphone,
-  Workflow,
-  GitBranch,
   Braces,
   Boxes,
   Cloud,
-  Server,
   Wrench,
   Sparkles
 } from "lucide-react";
-
 
 const Skills = () => {
   const { portfolio, loading } = usePortfolio();
@@ -30,21 +23,19 @@ const Skills = () => {
 
   if (loading) return null;
 
+  // ⬇️ STRICTLY aligned to your JSON keys:
+  // languagesAndScripting, frontendDevelopment, backendDevelopment,
+  // databaseAndORM, cloudAndDevOps, testingAndQA, tools, other
   const skillCategories = [
-  { title: 'Languages & Scripting', icon: Braces,   skills: asArr(sk.languagesAndScripting), color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
-  { title: 'Frontend Development',  icon: Code,     skills: asArr(sk.frontendDevelopment),   color: 'from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800' },
-  { title: 'UI Frameworks',         icon: Palette,  skills: asArr(sk.uiFrameworks),          color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
-  { title: 'Backend & APIs',        icon: Boxes,    skills: asArr(sk.backendDevelopment),    color: 'from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800' },
-  { title: 'Database & ORM',        icon: Database, skills: asArr(sk.databaseAndORM),        color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
-  { title: 'Server & Deployment',   icon: Server,   skills: asArr(sk.serverAndDeployment),   color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
-  { title: 'Tools & Platforms',     icon: Wrench,   skills: asArr(sk.toolsAndPlatforms),     color: 'from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800' },
-  { title: 'Testing & QA',          icon: TestTube, skills: asArr(sk.testingAndQA),               color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
-  { title: 'Analytics',             icon: BarChart, skills: asArr(sk.analytics),             color: 'from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800' },
-  { title: 'Marketing',             icon: Megaphone,skills: asArr(sk.marketing),             color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
-  { title: 'Automation & CRM',      icon: Workflow, skills: asArr(sk.automation),            color: 'from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800' },
-  { title: 'Other Skills',          icon: Sparkles, skills: asArr(sk.otherSkills),           color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' }
-];
-
+    { title: 'Languages & Scripting', icon: Braces,   skills: asArr(sk.languagesAndScripting), color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
+    { title: 'Frontend Development',  icon: Code,     skills: asArr(sk.frontendDevelopment),   color: 'from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800' },
+    { title: 'Backend & APIs',        icon: Boxes,    skills: asArr(sk.backendDevelopment),    color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
+    { title: 'Database & ORM',        icon: Database, skills: asArr(sk.databaseAndORM),        color: 'from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800' },
+    { title: 'Cloud & DevOps',        icon: Cloud,    skills: asArr(sk.cloudAndDevOps),        color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
+    { title: 'Testing & QA',          icon: TestTube, skills: asArr(sk.testingAndQA),          color: 'from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800' },
+    { title: 'Tools',                 icon: Wrench,   skills: asArr(sk.tools),                 color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
+    { title: 'Other',                 icon: Sparkles, skills: asArr(sk.other),                 color: 'from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800' }
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
