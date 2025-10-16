@@ -11,7 +11,8 @@ import {
   Boxes,
   Cloud,
   Wrench,
-  Sparkles
+  Sparkles,
+  Palette
 } from "lucide-react";
 
 const Skills = () => {
@@ -29,6 +30,7 @@ const Skills = () => {
   const skillCategories = [
     { title: 'Languages & Scripting', icon: Braces,   skills: asArr(sk.languagesAndScripting), color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
     { title: 'Frontend Development',  icon: Code,     skills: asArr(sk.frontendDevelopment),   color: 'from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800' },
+    { title: 'UI Frameworks',         icon: Palette,  skills: asArr(sk.uiFrameworks),          color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
     { title: 'Backend & APIs',        icon: Boxes,    skills: asArr(sk.backendDevelopment),    color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },
     { title: 'Database & ORM',        icon: Database, skills: asArr(sk.databaseAndORM),        color: 'from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800' },
     { title: 'Cloud & DevOps',        icon: Cloud,    skills: asArr(sk.cloudAndDevOps),        color: 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900' },

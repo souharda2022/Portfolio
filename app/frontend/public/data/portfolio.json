@@ -2,7 +2,7 @@
   "personal_info": {
     "name": "Rifat Arman Chowdhury",
     "title": "Technical Engineer & Data Analyst",
-    "tagline": "QA-focused engineer moving toward Full-Stack — BSc in CSE (BRAC University). React/Flask apps, data/ads automation, and practical CV.",
+    "tagline": "Aspiring Software Engineer | BSc in Computer Science at BRAC University | Passionate about Full Stack Development, Software Engineering, and AI/ML",
     "email": "rifatutsho7@gmail.com",
     "phone": "+88 01939 695 245",
     "location": "Dhaka, Bangladesh",
@@ -61,6 +61,7 @@
   "skills": {
     "languagesAndScripting": ["Python", "JavaScript", "SQL"],
     "frontendDevelopment": ["React", "Tailwind CSS", "Next.js", "HTML", "CSS", "Redux"],
+    "uiFrameworks": ["Tailwind CSS", "Bootstrap", "DaisyUI", "Shadcn"],
     "backendDevelopment": ["Node.js", "Express", "Flask", "REST"],
     "databaseAndORM": ["PostgreSQL", "MySQL", "MongoDB"],
     "cloudAndDevOps": ["Vercel", "Firebase", "CI/CD"],
