@@ -186,6 +186,7 @@ const Contact = () => {
               <Card className="bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700">
                 <CardContent className="p-6">
                   <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                    <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="hidden" />
                     <div>
                       <Input
                         name="name"
