@@ -34,6 +34,12 @@ const Hero = () => {
   const github = personalInfo.github ?? '';
   const linkedin = personalInfo.linkedin ?? '';
   const email = personalInfo.email ?? '';
+  const isExternalResume = /^https?:\/\//i.test(resumeUrl || '');
+  const resumeHref = isExternalResume
+    ? resumeUrl
+    : `${process.env.PUBLIC_URL}/${resumeUrl || 'cv.pdf'}`;
+
+  
 
   const skills = useMemo(() => flattenSkills(portfolio?.skills), [portfolio]);
   const marqueeItems = useMemo(() => [...skills, ...skills], [skills]);
@@ -125,16 +131,26 @@ const Hero = () => {
                 Get In Touch
               </Button>
               <Button
+                asChild
                 size="lg"
                 variant="outline"
                 className="border-2 border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-                onClick={() => resumeUrl && window.open(resumeUrl, '_blank')}
-                disabled={!resumeUrl}
-                title={resumeUrl ? 'Open resume' : 'No resume link'}
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
+                <a
+                  href={resumeHref}
+                  {...(isExternalResume
+                    ? { target: '_blank', rel: 'noopener noreferrer' } // open external resume in new tab
+                    : { download: true })}                              // download local PDF
+                  title={isExternalResume ? 'View resume' : 'Download resume'}
+                >
+                  <span className="inline-flex items-center">
+                    <Download className="mr-2 h-5 w-5" />
+                    {isExternalResume ? 'View CV' : 'Download CV'}
+                  </span>
+                </a>
               </Button>
+
+
             </motion.div>
 
             {/* Socials */}

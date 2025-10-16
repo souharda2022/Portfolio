@@ -71,7 +71,7 @@
     },
     {
       "id": 2,
-      "title": "FinAid — Personal Finance Web App",
+      "title": "FinGuard — Personal Finance Web App",
       "category": "Full Stack",
       "description": "Responsive finance tracker with auth, REST APIs, and test coverage.",
       "technologies": ["React", "Flask", "PostgreSQL"],

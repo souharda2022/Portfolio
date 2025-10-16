@@ -9,6 +9,36 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 
 const asArr = (x) => (Array.isArray(x) ? x : []);
 
+const slugify = (s = '') =>
+  s
+    .toString()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+
+/**
+ * Resolve an image URL for a given project.
+ * Priority:
+ *  1) project.image (absolute URL or relative path)
+ *  2) PUBLIC_URL/images/<kebab-case(title)>.jpg
+ *  3) PUBLIC_URL/images/placeholder.jpg
+ */
+const resolveProjectImage = (project) => {
+  const title = project?.title || 'untitled-project';
+
+  // If image is explicitly provided in data, respect it
+  if (project?.image) {
+    // allow full URLs or relative paths like "/images/foo.png" or "images/foo.png"
+    if (/^https?:\/\//i.test(project.image)) return project.image;
+    const path = project.image.replace(/^\/?images\//, ''); // normalize leading "images/"
+    return `${process.env.PUBLIC_URL}/images/${path}`;
+  }
+
+  // Otherwise, derive from title using .jpg
+  const derived = `${slugify(title)}.jpg`;
+  return `${process.env.PUBLIC_URL}/images/${derived}`;
+};
+
 const Projects = () => {
   const { portfolio, loading } = usePortfolio();
   const projects = asArr(portfolio?.projects);
@@ -26,13 +56,22 @@ const Projects = () => {
     visible: { opacity: 1, y: 0 },
   };
 
+  const openDetails = (project) => {
+    const techs = asArr(project?.technologies);
+    const highlights = asArr(project?.highlights);
+    const title = project?.title || 'Untitled Project';
+    // Always pass a concrete image URL to the dialog
+    const imageUrl = resolveProjectImage(project) || `${process.env.PUBLIC_URL}/images/placeholder.jpg`;
+    setSelectedProject({ ...project, technologies: techs, highlights, title, image: imageUrl });
+  };
+
   return (
     <section id="projects" className="py-20 bg-white dark:bg-black">
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-100px' }}
           variants={containerVariants}
           className="max-w-6xl mx-auto"
         >
@@ -50,27 +89,36 @@ const Projects = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, i) => {
               const techs = asArr(project?.technologies);
-              const highlights = asArr(project?.highlights);
-              const img = project?.image || '';
               const title = project?.title || 'Untitled Project';
               const category = project?.category || 'Project';
               const description = project?.description || '';
               const github = project?.github || '';
               const demo = project?.demo || '';
 
+              // Compute image URL (see rules above)
+              let imageUrl = resolveProjectImage(project);
+
+              // We can’t know at build-time if your jpg exists; optionally, you can keep a placeholder.jpg in /images
+              // and rely on it visually if a given file isn’t present. (Real 404 → will show broken image icon otherwise.)
+              // To avoid that, just make sure you add the files with the expected names in /public/images.
+              // Example: "Weather App" -> weather-app.jpg
+
               return (
                 <motion.div key={project?.id ?? i} variants={itemVariants} whileHover={{ y: -10 }}>
                   <Card
                     className="h-full bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 border-2 border-gray-200 dark:border-gray-700 overflow-hidden group cursor-pointer"
-                    onClick={() => setSelectedProject({ ...project, technologies: techs, highlights })}
+                    onClick={() => openDetails(project)}
                   >
                     <div className="relative overflow-hidden h-48">
-                      {/* image is optional */}
-                      {img ? (
+                      {imageUrl ? (
                         <img
-                          src={img}
+                          src={imageUrl}
                           alt={title}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          onError={(e) => {
+                            // Graceful fallback if specific image missing
+                            e.currentTarget.src = `${process.env.PUBLIC_URL}/images/placeholder.jpg`;
+                          }}
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-sm text-gray-500 dark:text-gray-400">
@@ -168,22 +216,21 @@ const Projects = () => {
                     src={selectedProject.image}
                     alt={selectedProject.title || 'Project'}
                     className="w-full h-64 object-cover rounded-lg"
+                    onError={(e) => {
+                      e.currentTarget.src = `${process.env.PUBLIC_URL}/images/placeholder.jpg`;
+                    }}
                   />
                 ) : null}
 
                 <div>
-                  <h3 className="text-lg font-semibold text-black dark:text-white mb-2">
-                    Description
-                  </h3>
+                  <h3 className="text-lg font-semibold text-black dark:text-white mb-2">Description</h3>
                   <p className="text-gray-600 dark:text-gray-400">
                     {selectedProject.description || '—'}
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-black dark:text-white mb-3">
-                    Key Highlights
-                  </h3>
+                  <h3 className="text-lg font-semibold text-black dark:text-white mb-3">Key Highlights</h3>
                   <ul className="space-y-2">
                     {asArr(selectedProject.highlights).length
                       ? asArr(selectedProject.highlights).map((highlight, idx) => (
@@ -197,9 +244,7 @@ const Projects = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-black dark:text-white mb-3">
-                    Technologies
-                  </h3>
+                  <h3 className="text-lg font-semibold text-black dark:text-white mb-3">Technologies</h3>
                   <div className="flex flex-wrap gap-2">
                     {asArr(selectedProject.technologies).length
                       ? asArr(selectedProject.technologies).map((tech, idx) => (
