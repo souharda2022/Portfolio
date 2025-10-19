@@ -11,26 +11,13 @@
     "portfolio": "https://rifatc2002.github.io/Portfolio/",
     "resumeUrl": "Rifat_Arman_Chowdhury_Resume.pdf"
   },
-   "achievements": [
+  "achievements": [
     { "value": "7", "label": "Full-Stack Projects" },
     { "value": "17+", "label": "Landing Pages Shipped" },
     { "value": "120+", "label": "Test Cases per Release" },
     { "value": "450+", "label": "Students Taught" }
   ],
-  "education": {
-    "degree": "BSc in Computer Science",
-    "institution": "BRAC University",
-    "duration": "Oct 2021 — Sep 2025",
-    "location": "Dhaka, Bangladesh",
-    "coursework": [
-      "Data Structures & Algorithms",
-      "Software Engineering",
-      "System Design",
-      "Database Management",
-      "Neural Networks",
-      "Artificial Intelligence"
-    ]
-  },
+  
   "experience": [
     {
       "id": 1,
@@ -55,13 +42,95 @@
         "Delivered Spoken English & Grammar classes to 450+ students; designed 11 lesson plans and assessments.",
         "Introduced digital attendance and progress tracking; facilitated mock tests and speaking practice."
       ]
+    },
+    {
+      "id": 3,
+      "title": "Intern, Event Management",
+      "company": "Oxford International School",
+      "duration": "Oct 2020 — Mar 2021",
+      "type": "On-site",
+      "highlights": [
+        "Coordinated logistics and volunteer schedules for Annual Sports Day 2021 and Science Fair 2021 across registrations, venue layout, equipment checklists, signage, and vendor communication.",
+        "Coordinated safety and crowd-flow measures with teachers and volunteers, including entry points, queueing, and emergency contacts."
+      ]
     }
   ],
-  "projects": [ { "id": 1, "title": "Fabric Defect Detection System (Thesis)", "category": "Computer Vision", "description": "YOLOv8-style CNN pipeline with EDA, augmentation, and ablations for defect detection.", "technologies": ["Python", "PyTorch", "OpenCV"], "highlights": [ "95.7% validation accuracy on ~7k labeled images", "Reproducible training pipeline & experiments" ], "github": "https://github.com/RifatC2002/Fabric-Defect-Detection-System", "demo": "", "image": "" }, { "id": 2, "title": "FinGuard — Personal Finance Web App", "category": "Full Stack", "description": "Responsive finance tracker with auth, REST APIs, and test coverage.", "technologies": ["React", "Flask", "PostgreSQL"], "highlights": [ "Postman collection + SQL reconciliation", "Lighthouse Accessibility 97", "25+ documented test cases" ], "github": "https://github.com/RifatC2002/FinGuard", "demo": "", "image": "" }, { "id": 3, "title": "ParkPilot — Parking Management", "category": "Web App", "description": "Login/booking with operator dashboard and analytics events.", "technologies": ["Flask", "React"], "highlights": [ "16 PyTest smoke cases (auth/forms)", "Booking submit time reduced by ~40%" ], "github": "https://github.com/RifatC2002/ParkPilot", "demo": "", "image": "" }, { "id": 4, "title": "HealthLens — Fitness Tracker", "category": "Full Stack", "description": "Workouts and nutrition with charts and standardized error states.", "technologies": ["React", "Flask"], "highlights": [ "12 API endpoints validated in Postman", "Lightweight component library" ], "github": "https://github.com/RifatC2002/HealthLens", "demo": "", "image": "" }, { "id": 5, "title": "BlinkGPT — Eye Gesture Controlled Chatbot", "category": "Computer Vision", "description": "Gaze/blink input prototype to control a chatbot interface.", "technologies": ["Python", "OpenCV"], "highlights": [ "Usability tuning reduced task completion time by ~65%" ], "github": "https://github.com/RifatC2002/BlinkGPT", "demo": "", "image": "" } ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Fabric Defect Detection System (Thesis)",
+      "category": "Computer Vision",
+      "description": "YOLOv8-style defect localization plus EfficientNet classification pipeline; EDA, augmentation, and ablations.",
+      "technologies": ["Python", "PyTorch", "OpenCV"],
+      "highlights": [
+        "91% overall accuracy on a held-out validation set (~7k labeled images)",
+        "Reproducible training pipeline & experiments"
+      ],
+      "github": "https://github.com/RifatC2002/Fabric-Defect-Detection-System",
+      "demo": "",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "title": "FinGuard — Personal Finance Web App",
+      "category": "Full Stack",
+      "description": "Responsive finance tracker with auth, REST APIs, and test coverage.",
+      "technologies": ["React", "Flask", "PostgreSQL"],
+      "highlights": [
+        "Postman collection + SQL reconciliation",
+        "Lighthouse Accessibility 97",
+        "25+ documented test cases"
+      ],
+      "github": "https://github.com/RifatC2002/FinGuard",
+      "demo": "",
+      "image": ""
+    },
+    {
+      "id": 3,
+      "title": "ParkPilot — Parking Management",
+      "category": "Web App",
+      "description": "Login/booking with operator dashboard and analytics events.",
+      "technologies": ["Flask", "React"],
+      "highlights": [
+        "16 PyTest smoke cases (auth/forms)",
+        "Booking submit time reduced by ~40%"
+      ],
+      "github": "https://github.com/RifatC2002/ParkPilot",
+      "demo": "",
+      "image": ""
+    },
+    {
+      "id": 4,
+      "title": "HealthLens — Fitness Tracker",
+      "category": "Full Stack",
+      "description": "Workouts and nutrition with charts and standardized error states.",
+      "technologies": ["React", "Flask"],
+      "highlights": [
+        "12 API endpoints validated in Postman",
+        "Lightweight component library"
+      ],
+      "github": "https://github.com/RifatC2002/HealthLens",
+      "demo": "",
+      "image": ""
+    },
+    {
+      "id": 5,
+      "title": "BlinkGPT — Eye Gesture Controlled Chatbot",
+      "category": "Computer Vision",
+      "description": "Gaze/blink input prototype to control a chatbot interface.",
+      "technologies": ["Python", "OpenCV"],
+      "highlights": [
+        "Usability tuning reduced task completion time by ~65%"
+      ],
+      "github": "https://github.com/RifatC2002/BlinkGPT",
+      "demo": "",
+      "image": ""
+    }
+  ],
   "skills": {
     "languagesAndScripting": ["Python", "JavaScript", "SQL"],
     "frontendDevelopment": ["React", "Tailwind CSS", "Next.js", "HTML", "CSS", "Redux"],
-    "uiFrameworks": ["Tailwind CSS", "Bootstrap", "DaisyUI", "Shadcn"],
+    "uiFrameworks": ["Tailwind CSS", "Bootstrap", "DaisyUI", "shadcn/ui"],
     "backendDevelopment": ["Node.js", "Express", "Flask", "REST"],
     "databaseAndORM": ["PostgreSQL", "MySQL", "MongoDB"],
     "cloudAndDevOps": ["Vercel", "Firebase", "CI/CD"],
@@ -76,6 +145,6 @@
       "Defect management & triage (Jira/TestRail)"
     ],
     "tools": ["Git", "VS Code", "GA4", "Looker Studio", "Tableau", "Power BI", "Excel"],
-    "other": ["n8n","Zapier","GoHighLevel","JWT", "OAuth2", "Email HTML/MJML", "Figma"]
+    "other": ["n8n", "Zapier", "GoHighLevel", "JWT", "OAuth2", "Email HTML/MJML", "Figma"]
   }
 }
