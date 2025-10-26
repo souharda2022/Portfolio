@@ -1,4 +1,4 @@
-## Rifat Arman Chowdhury — Portfolio
+## Souharda Bhattacharjee — Portfolio
 
     Monochrome, animated portfolio built with React + Tailwind + Framer Motion, reading content from public/data/portfolio.json and ready for GitHub Pages.
 
