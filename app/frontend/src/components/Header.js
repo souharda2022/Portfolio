@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 import { Button } from "./ui/button";
@@ -8,6 +8,7 @@ const Header = () => {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const controls = useAnimation();
 
   const sections = [
     { id: "home", label: "Home" },
@@ -18,63 +19,70 @@ const Header = () => {
     { id: "contact", label: "Contact" },
   ];
 
-  // Detect scroll for background blur
+  // Scroll-based animation
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+      controls.start({
+        y: isScrolled ? 0 : -10,
+        opacity: isScrolled ? 1 : 0.98,
+        scale: isScrolled ? 1 : 1.02,
+        backgroundColor: isScrolled
+          ? theme === "dark"
+            ? "rgba(0,0,0,0.8)"
+            : "rgba(255,255,255,0.8)"
+          : "rgba(0,0,0,0)",
+        backdropFilter: isScrolled ? "blur(12px)" : "blur(0px)",
+        boxShadow: isScrolled
+          ? "0 4px 20px rgba(0,0,0,0.25)"
+          : "0 0 0 rgba(0,0,0,0)",
+        transition: { duration: 0.4, ease: "easeInOut" },
+      });
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [theme, controls]);
 
-  // Automatically detect which section is visible
+  // Active section detection
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5, // section considered visible when 50% in view
-    };
-
+    const observerOptions = { root: null, rootMargin: "0px", threshold: 0.5 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActive(entry.target.id);
-        }
+        if (entry.isIntersecting) setActive(entry.target.id);
       });
     }, observerOptions);
-
-    // Observe all sections
     sections.forEach((section) => {
       const el = document.getElementById(section.id);
       if (el) observer.observe(el);
     });
-
     return () => observer.disconnect();
   }, []);
 
   const scrollToSection = (id) => {
     const el = document.querySelector(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-black/60 dark:bg-black/80 backdrop-blur-xl border-b border-gray-800 shadow-lg"
-          : "bg-transparent"
-      }`}
+      animate={controls}
+      initial={{
+        y: -20,
+        opacity: 0,
+        backgroundColor: "transparent",
+        backdropFilter: "blur(0px)",
+      }}
+      className="fixed top-0 left-0 w-full z-50"
     >
-      <nav className="container mx-auto flex justify-center items-center py-3 px-4 md:px-8">
+      <nav className="container mx-auto flex justify-center items-center py-5 px-4 md:px-8">
         {/* Center: Navigation Links */}
-        <ul className="flex gap-6 md:gap-10 text-sm md:text-base font-medium text-gray-300">
+        <ul className="flex gap-8 md:gap-12 text-base md:text-lg font-semibold text-gray-300 tracking-wide">
           {sections.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => scrollToSection(`#${item.id}`)}
-                className={`relative uppercase tracking-wide transition-all ${
+                className={`relative uppercase transition-all ${
                   active === item.id
                     ? "text-white"
                     : "hover:text-cyan-400 text-gray-400"
@@ -84,7 +92,8 @@ const Header = () => {
                 {active === item.id && (
                   <motion.span
                     layoutId="underline"
-                    className="absolute left-0 -bottom-1 w-full h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
+                    className="absolute left-0 -bottom-[6px] w-full h-[3px] bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
+                    transition={{ duration: 0.25 }}
                   />
                 )}
               </button>
@@ -101,9 +110,9 @@ const Header = () => {
             className="rounded-full hover:scale-105 transition-transform"
           >
             {theme === "dark" ? (
-              <Sun className="h-5 w-5 text-yellow-400" />
+              <Sun className="h-6 w-6 text-yellow-400" />
             ) : (
-              <Moon className="h-5 w-5 text-gray-700" />
+              <Moon className="h-6 w-6 text-gray-700" />
             )}
           </Button>
         </div>
@@ -113,4 +122,3 @@ const Header = () => {
 };
 
 export default Header;
-
