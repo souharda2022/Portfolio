@@ -1,137 +1,128 @@
 {
   "personal_info": {
-    "name": "Rifat Arman Chowdhury",
-    "title": "Technical Engineer & Data Analyst",
-    "tagline": "Aspiring Software Engineer | BSc in Computer Science at BRAC University | Passionate about Full Stack Development, Software Engineering, and AI/ML",
-    "email": "rifatutsho7@gmail.com",
-    "phone": "+88 01939 695 245",
-    "location": "Dhaka, Bangladesh",
-    "github": "https://github.com/RifatC2002",
-    "linkedin": "https://www.linkedin.com/in/rifat-arman-chowdhury",
-    "portfolio": "https://rifatc2002.github.io/Portfolio/",
-    "resumeUrl": "Rifat_Arman_Chowdhury_Resume.pdf"
+    "name": "Souharda Bhattacharjee",
+    "title": "Aspiring Data Scientist",
+    "tagline": " BSc in Computer Science at BRAC University | Passionate about Data Analyst/Business Analyst, Project Management, Software Engineering, and AI/ML",
+    "email": "souhardabhattacharjee02@gmail.com",
+    "phone": "+88 01878 242 236",
+    "location": "Rayerbazar, Hajaribagh, Dhaka-1209",
+    "github": "https://github.com/souharda2022",
+    "linkedin": "https://www.linkedin.com/in/souharda-bhattacharjee",
+    "portfolio": "https://souharda2022.github.io/Portfolio/",
+    "resumeUrl": "Souharda Bhattacharjee.pdf",
+    "profileImage": "/images/souharda_bhattacharjee.png"
   },
+
   "achievements": [
     { "value": "7", "label": "Full-Stack Projects" },
     { "value": "17+", "label": "Landing Pages Shipped" },
     { "value": "120+", "label": "Test Cases per Release" },
     { "value": "450+", "label": "Students Taught" }
   ],
-  
+
   "experience": [
     {
       "id": 1,
-      "title": "Technical Engineer & Data Analyst",
-      "company": "Obby (USA)",
-      "duration": "Nov 2024 — Present",
-      "type": "Remote",
+      "title": "Researcher",
+      "company": "ComputerVision and Intelligent Systems Research Lab (CVIS), BRACU",
+      "duration": "Nov 2023 — 2025",
+      "type": "Part-time",
       "highlights": [
-        "Built 17+ responsive landing pages and full websites using React, Tailwind CSS, shadcn/ui, and Redux.",
-        "Created site forms with QuillForms; authored test plans; executed cross-browser/device QA and production fixes.",
-        "Implemented Meta Pixel and GA4; launched/monitored Meta & Google Ads; built weekly performance reports.",
-        "Automated form-submission alerts to Slack, Google Voice, and email; set up content/onboarding automations."
+        "Advancing quality control in the textile industry using state-of-the-art machine vision and machine learning techniques.",
+        "Conducting research and development of computer vision algorithms for diverse industrial applications."
       ]
     },
     {
       "id": 2,
-      "title": "Instructor of English as a Second Language",
-      "company": "Mentors Education, Dhaka",
-      "duration": "Nov 2023 — Present",
+      "title": "Director, Communication & Marketing",
+      "company": "BRAC University Computer Club (BUCC)",
+      "duration": "Nov 2023 — Nov 2024",
       "type": "On-site",
       "highlights": [
-        "Delivered Spoken English & Grammar classes to 450+ students; designed 11 lesson plans and assessments.",
-        "Introduced digital attendance and progress tracking; facilitated mock tests and speaking practice."
+        "Worked as the Head of the Marketing Team, dealing with various companies for sponsorships and corporate affiliations, as well as budgeting."
       ]
     },
     {
       "id": 3,
-      "title": "Intern, Event Management",
-      "company": "Oxford International School",
-      "duration": "Oct 2020 — Mar 2021",
+      "title": "Head of Judge Management",
+      "company": "Hult Prize at BRAC University",
+      "duration": "Oct 2023 — Jan 2024",
       "type": "On-site",
       "highlights": [
-        "Coordinated logistics and volunteer schedules for Annual Sports Day 2021 and Science Fair 2021 across registrations, venue layout, equipment checklists, signage, and vendor communication.",
-        "Coordinated safety and crowd-flow measures with teachers and volunteers, including entry points, queueing, and emergency contacts."
+        "Coordinated and led competitions and events by designing judging processes, overseeing teams, and ensuring smooth, efficient experiences for participants and judges.",
+        "Demonstrated strong leadership and organizational skills to ensure the success of each competition."
       ]
     }
   ],
-  "projects": [
-    {
-      "id": 1,
-      "title": "Fabric Defect Detection System (Thesis)",
-      "category": "Computer Vision",
-      "description": "YOLOv8-style defect localization plus EfficientNet classification pipeline; EDA, augmentation, and ablations.",
-      "technologies": ["Python", "PyTorch", "OpenCV"],
-      "highlights": [
-        "91% overall accuracy on a held-out validation set (~7k labeled images)",
-        "Reproducible training pipeline & experiments"
-      ],
-      "github": "https://github.com/RifatC2002/Fabric-Defect-Detection-System",
-      "demo": "",
-      "image": ""
-    },
-    {
-      "id": 2,
-      "title": "FinGuard — Personal Finance Web App",
-      "category": "Full Stack",
-      "description": "Responsive finance tracker with auth, REST APIs, and test coverage.",
-      "technologies": ["React", "Flask", "PostgreSQL"],
-      "highlights": [
-        "Postman collection + SQL reconciliation",
-        "Lighthouse Accessibility 97",
-        "25+ documented test cases"
-      ],
-      "github": "https://github.com/RifatC2002/FinGuard",
-      "demo": "",
-      "image": ""
-    },
-    {
-      "id": 3,
-      "title": "ParkPilot — Parking Management",
-      "category": "Web App",
-      "description": "Login/booking with operator dashboard and analytics events.",
-      "technologies": ["Flask", "React"],
-      "highlights": [
-        "16 PyTest smoke cases (auth/forms)",
-        "Booking submit time reduced by ~40%"
-      ],
-      "github": "https://github.com/RifatC2002/ParkPilot",
-      "demo": "",
-      "image": ""
-    },
-    {
-      "id": 4,
-      "title": "HealthLens — Fitness Tracker",
-      "category": "Full Stack",
-      "description": "Workouts and nutrition with charts and standardized error states.",
-      "technologies": ["React", "Flask"],
-      "highlights": [
-        "12 API endpoints validated in Postman",
-        "Lightweight component library"
-      ],
-      "github": "https://github.com/RifatC2002/HealthLens",
-      "demo": "",
-      "image": ""
-    },
-    {
-      "id": 5,
-      "title": "BlinkGPT — Eye Gesture Controlled Chatbot",
-      "category": "Computer Vision",
-      "description": "Gaze/blink input prototype to control a chatbot interface.",
-      "technologies": ["Python", "OpenCV"],
-      "highlights": [
-        "Usability tuning reduced task completion time by ~65%"
-      ],
-      "github": "https://github.com/RifatC2002/BlinkGPT",
-      "demo": "",
-      "image": ""
-    }
-  ],
+
+"projects": [
+  {
+    "id": 1,
+    "title": "Fabric Defect Detection System",
+    "category": "Thesis Project",
+    "description": "Led the creation of a high-quality dataset for Fabric Defect Detection by collecting over 7,000 real-world images from textile factories. Personally conducted extensive manual annotation using class-specific defect labels, ensuring precision and consistency across the dataset. Developed a real-time CNN model inspired by YOLOv8 to detect fabric defects in industrial settings.",
+    "highlights": [
+      "Created a large, annotated dataset (~7k textile images) for defect detection.",
+      "Designed a CNN-based model architecture inspired by YOLOv8.",
+      "Achieved consistent accuracy and performance across validation datasets."
+    ],
+    "github": "",
+    "demo": "",
+    "image": "feb_qul.jpg",
+    "technologies": []
+  },
+  {
+    "id": 2,
+    "title": "University Student Management System",
+    "category": "Personal Project",
+    "description": "Developed a university management platform integrating academic and financial features. Incorporated course registration, student progress tracking, and fee management modules to streamline student lifecycle management.",
+    "highlights": [
+      "Built a modular architecture integrating academic, finance, and student data.",
+      "Enabled smooth registration, performance tracking, and tuition management.",
+      "Improved administrative workflow efficiency across departments."
+    ],
+    "github": "",
+    "demo": "",
+    "image": "uni_stu.png",
+    "technologies": []
+  },
+  {
+    "id": 3,
+    "title": "Leather Quality Assessment",
+    "category": "Personal Project",
+    "description": "Implemented machine learning models to evaluate the surface quality of leather. Focused on defect classification and predictive modeling to automate the quality control process in manufacturing.",
+    "highlights": [
+      "Designed and trained multiple ML models for quality scoring.",
+      "Automated surface defect classification using computer vision techniques.",
+      "Enhanced manufacturing quality assurance and reduced manual inspection time."
+    ],
+    "github": "",
+    "demo": "",
+    "image": "leth_qul.png",
+    "technologies": []
+  },
+  {
+    "id": 4,
+    "title": "Vehicle Fuel Consumption Analysis",
+    "category": "Personal Project",
+    "description": "Performed a comprehensive analysis of vehicle types, performance, and fuel efficiency using predictive models. Assessed carbon emissions and alternative fuel options to improve environmental sustainability.",
+    "highlights": [
+      "Analyzed multiple datasets for vehicle types and performance parameters.",
+      "Built predictive models for fuel efficiency and emission estimation.",
+      "Provided insights on cost optimization and carbon reduction strategies."
+    ],
+    "github": "",
+    "demo": "",
+    "image": "fuel_vec.png",
+    "technologies": []
+  }
+],
+
   "skills": {
-    "languagesAndScripting": ["Python", "JavaScript", "SQL"],
-    "frontendDevelopment": ["React", "Tailwind CSS", "Next.js", "HTML", "CSS", "Redux"],
-    "uiFrameworks": ["Tailwind CSS", "Bootstrap", "DaisyUI", "shadcn/ui"],
-    "backendDevelopment": ["Node.js", "Express", "Flask", "REST"],
+    "languagesAndScripting": ["Python", "JavaScript", "SQL",  "C/C++"],
+    "frontendDevelopment": ["React", "Tailwind CSS", "Next.js", "HTML", "CSS"],
+    "ML Frameworks": ["Pytorch", "Scikit-learn", "TensorFlow", "OpenCV"],
+    "backendDevelopment": ["Node.js", "Express", "Flask", "REST", "FastAPI"],
     "databaseAndORM": ["PostgreSQL", "MySQL", "MongoDB"],
     "cloudAndDevOps": ["Vercel", "Firebase", "CI/CD"],
     "testingAndQA": [
@@ -145,6 +136,7 @@
       "Defect management & triage (Jira/TestRail)"
     ],
     "tools": ["Git", "VS Code", "GA4", "Looker Studio", "Tableau", "Power BI", "Excel"],
-    "other": ["n8n", "Zapier", "GoHighLevel", "JWT", "OAuth2", "Email HTML/MJML", "Figma"]
+    "other": ["n8n", "Zapier", "Email HTML/MJML", "Figma"]
   }
 }
+

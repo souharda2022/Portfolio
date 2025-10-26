@@ -51,10 +51,10 @@ const About = () => {
                 Background
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                {personalInfo.bio || "I’m a web developer and SQA tester who enjoys turning ideas into clean, working products. I care about readable code, helpful UI details, and shipping things that feel solid."}
+                {personalInfo.bio || "A dedicated Data Science and Machine Learning specialist, currently pursuing a Bachelor’s degree in Computer Science, with a strong passion for uncovering insights through data and developing intelligent systems that add real value. With a foundation built on analytical problem-solving, technical precision, and collaborative teamwork, I approach every project with commitment and curiosity. My interests lie in applying data-driven approaches to complex problems, where technology, logic, and creativity come together to produce meaningful outcomes."}
               </p>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Graduated with a BSc in Computer Science from BRAC University, I combine technical expertise with a passion for quality assurance. I focus on web development and QA, especially in building responsive web apps and designing practical test suites that prevent critical bugs from reaching users.
+                Born on 13 October 2001 in Dhaka, Bangladesh, my academic path began at Dhanmondi Government Boys High School, where I completed my Secondary School Certificate (SSC) in 2018, followed by my Higher Secondary Certificate (HSC) from Monipur High School & College. These early experiences shaped a strong interest in mathematics, coding, and system thinking, guiding me toward the evolving fields of computer science, data analytics, and artificial intelligence. My goal is to continuously grow as a professional who bridges innovation and practical impact through data and technology.
               </p>
             </motion.div>
 
@@ -65,7 +65,28 @@ const About = () => {
                     What I Bring
                   </h3>
                   <ul className="space-y-3">
+ 
                     <li className="flex items-start">
+                      <span className="text-black dark:text-white mr-2">▸</span>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        Data analytics and campaign optimization
+                      </span>
+ 
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-black dark:text-white mr-2">▸</span>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        Machine learning and computer vision applications
+                      </span>
+                   </li>
+                    <li className="flex items-start">
+                      <span className="text-black dark:text-white mr-2">▸</span>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        UI/UX design with Figma and responsive implementation
+                      </span>
+
+                   </li>   
+                   <li className="flex items-start">
                       <span className="text-black dark:text-white mr-2">▸</span>
                       <span className="text-gray-600 dark:text-gray-400">
                         Full-stack development with MERN and Flask
@@ -77,30 +98,14 @@ const About = () => {
                         Comprehensive QA and testing methodologies
                       </span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-black dark:text-white mr-2">▸</span>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        Data analytics and campaign optimization
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-black dark:text-white mr-2">▸</span>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        UI/UX design with Figma and responsive implementation
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-black dark:text-white mr-2">▸</span>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        Machine learning and computer vision applications
-                      </span>
-                    </li>
-                  </ul>
+                    
+                  
+                 </ul>
                 </CardContent>
               </Card>
             </motion.div>
           </div>
-
+          {/*
           <motion.div variants={containerVariants} className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {achievements.length ? (
               achievements.map((achievement, index) => (
@@ -123,8 +128,12 @@ const About = () => {
               </div>
             )}
           </motion.div>
+
+        */} 
+  
         </motion.div>
       </div>
+      
     </section>
   );
 };

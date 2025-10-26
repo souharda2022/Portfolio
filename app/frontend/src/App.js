@@ -1,5 +1,5 @@
 // src/App.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { PortfolioProvider } from './contexts/PortfolioContext';
 
@@ -16,6 +16,10 @@ import { Toaster } from './components/ui/toaster';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    document.title = "Souharda Bhattacharjee | Portfolio";
+  }, []);
+
   return (
     <ThemeProvider>
       <PortfolioProvider>
