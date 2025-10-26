@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://RifatC2002.github.io/Portfolio/",
+  "homepage": "https://souharda2022.github.io/Portfolio/",
   "scripts": {
     "start": "craco start",
     "build": "craco build",
