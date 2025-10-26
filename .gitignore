@@ -1,0 +1,26 @@
+# node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# build output
+build/
+dist/
+.cache/
+
+# env & system files
+.env
+.DS_Store
+Thumbs.db
+
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+# Python virtual env inside frontend
+app/frontend/venv/
+app/frontend/.venv/
+app/frontend/env/
