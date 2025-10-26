@@ -1,12 +1,11 @@
 // src/components/Hero.js
 // src/components/Hero.js
+
 import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { usePortfolio } from "../contexts/PortfolioContext";
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
-import DecryptedText from "./ui/SplitText";
 
 const flattenSkills = (skillsObj) => {
   if (!skillsObj || typeof skillsObj !== "object") return [];
@@ -30,21 +29,17 @@ const Hero = () => {
   const name = personalInfo.name ?? "Your Name";
   const title = personalInfo.title ?? "";
   const tagline = personalInfo.tagline ?? "";
-  const resumeUrl = personalInfo.resumeUrl ?? "SOUHARDA BHATTACHARJEE.pdf";
+  const resumeUrl = personalInfo.resumeUrl ?? "souhardabhattacharjee.pdf";
   const github = personalInfo.github ?? "";
   const linkedin = personalInfo.linkedin ?? "";
   const email = personalInfo.email ?? "";
-  const profileImage = personalInfo.profileImage || "/images/souharda_bhattacharjee.png";
+  const profileImage = personalInfo.profileImage || "/images/souharda.png";
 
-  const imageSrc = process.env.PUBLIC_URL + profileImage;
-
-  const isExternalResume = /^https?:\/\//i.test(resumeUrl || "");
-  const resumeHref = isExternalResume
-    ? resumeUrl
-    : `${process.env.PUBLIC_URL}/${resumeUrl || "SOUHARDA BHATTACHARJEE.pdf"}`;
+  // ✅ Ensure correct public path (works on GitHub Pages too)
+  const imageSrc = `${process.env.PUBLIC_URL}${profileImage}`;
+  const resumeHref = `${process.env.PUBLIC_URL}/${resumeUrl}`;
 
   const skills = useMemo(() => flattenSkills(portfolio?.skills), [portfolio]);
-  const marqueeItems = useMemo(() => [...skills, ...skills], [skills]);
 
   if (loading) {
     return (
@@ -79,7 +74,7 @@ const Hero = () => {
       {/* Main content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto text-center md:text-left">
-          
+
           {/* LEFT: Profile Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -90,18 +85,18 @@ const Hero = () => {
             <img
               src={imageSrc}
               alt={name}
-              className="w-52 h-52 md:w-64 md:h-64 rounded-full object-cover shadow-2xl border-4 border-gray-700 dark:border-gray-600"
+              className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-2xl border-4 border-gray-700 dark:border-gray-600"
+              onError={(e) => (e.target.src = `${process.env.PUBLIC_URL}/images/souharda.png`)}
             />
           </motion.div>
 
-          {/* RIGHT: Name, Title, Tagline */}
+          {/* RIGHT: Text and Buttons */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            {/* Name (force single line) */}
             <motion.h1
               className="text-5xl md:text-6xl font-bold text-black dark:text-white mb-4 whitespace-nowrap leading-tight tracking-tight"
               initial={{ opacity: 0, y: 20 }}
@@ -151,15 +146,10 @@ const Hero = () => {
                 variant="outline"
                 className="border-2 border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
               >
-                <a
-                  href={resumeHref}
-                  {...(isExternalResume
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : { download: true })}
-                >
+                <a href={resumeHref} download>
                   <span className="inline-flex items-center">
                     <Download className="mr-2 h-5 w-5" />
-                    {isExternalResume ? "View CV" : "Download CV"}
+                    Download CV
                   </span>
                 </a>
               </Button>

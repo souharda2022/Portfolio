@@ -1,38 +1,59 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Moon, Sun } from 'lucide-react';
-import PillNav from './ui/PillNav';
-import { useTheme } from '../contexts/ThemeContext';
-import { Button } from './ui/button';
-import logo from '../assets/logo.jpg';
-
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "../contexts/ThemeContext";
+import { Button } from "./ui/button";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' }
+  const sections = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "skills", label: "Skills" },
+    { id: "contact", label: "Contact" },
   ];
 
-  const scrollToSection = (e, href) => {
-    e.preventDefault();
-    const el = document.querySelector(href);
+  // Detect scroll for background blur
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Automatically detect which section is visible
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // section considered visible when 50% in view
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    sections.forEach((section) => {
+      const el = document.getElementById(section.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToSection = (id) => {
+    const el = document.querySelector(id);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
+      el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -40,44 +61,56 @@ const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-    scrolled ? 'bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
-  }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-black/60 dark:bg-black/80 backdrop-blur-xl border-b border-gray-800 shadow-lg"
+          : "bg-transparent"
+      }`}
     >
-      <nav className="container mx-auto px-4 py-4">
-        {/* Theme toggle (kept) */}
-        <div className="absolute left-0 top-3 md:top-4 z-[1100]">
-          <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
-            {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+      <nav className="container mx-auto flex justify-center items-center py-3 px-4 md:px-8">
+        {/* Center: Navigation Links */}
+        <ul className="flex gap-6 md:gap-10 text-sm md:text-base font-medium text-gray-300">
+          {sections.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => scrollToSection(`#${item.id}`)}
+                className={`relative uppercase tracking-wide transition-all ${
+                  active === item.id
+                    ? "text-white"
+                    : "hover:text-cyan-400 text-gray-400"
+                }`}
+              >
+                {item.label}
+                {active === item.id && (
+                  <motion.span
+                    layoutId="underline"
+                    className="absolute left-0 -bottom-1 w-full h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
+                  />
+                )}
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        {/* Right: Theme Toggle */}
+        <div className="absolute right-4 md:right-8">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="rounded-full hover:scale-105 transition-transform"
+          >
+            {theme === "dark" ? (
+              <Sun className="h-5 w-5 text-yellow-400" />
+            ) : (
+              <Moon className="h-5 w-5 text-gray-700" />
+            )}
           </Button>
         </div>
-
-        {/* Pill-style navbar */}
-        <div className="flex justify-end">
-          <PillNav
-            // logo={yourLogo} // optional
-            items={[
-              { label: 'Home', href: '#home' },
-              { label: 'About', href: '#about' },
-              { label: 'Experience', href: '#experience' },
-              { label: 'Projects', href: '#projects' },
-              { label: 'Skills', href: '#skills' },
-              { label: 'Contact', href: '#contact' }
-            ]}
-            activeHref="#home"
-            ease="power2.easeOut"
-
-          baseColor={theme === 'dark' ? 'rgba(255,255,255,0.10)' : '#111111'}
-          pillColor={theme === 'dark' ? 'rgba(255,255,255,0.06)' : '#ffffff'}
-          hoveredPillTextColor={theme === 'dark' ? '#0B0F19' : '#ffffff'}
-          pillTextColor={theme === 'dark' ? '#E7EAF0' : '#111111'}
-
-        />
-      </div>
-
       </nav>
     </motion.header>
   );
 };
 
 export default Header;
+

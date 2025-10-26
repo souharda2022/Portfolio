@@ -1,88 +1,85 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Heart, ArrowUp } from 'lucide-react';
-import { usePortfolio } from '../contexts/PortfolioContext';
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
+import { usePortfolio } from "../contexts/PortfolioContext";
 
 const Footer = () => {
   const { portfolio } = usePortfolio();
   const personalInfo = portfolio?.personal_info || {};
-  const name = personalInfo.name || 'Rifat Arman Chowdhury';
-  const github = personalInfo.github || '';
-  const linkedin = personalInfo.linkedin || '';
-  const email = personalInfo.email || '';
+  const name = personalInfo.name || "Souharda Bhattacharjee";
+  const github = personalInfo.github || "";
+  const linkedin = personalInfo.linkedin || "";
+  const email = personalInfo.email || "";
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="bg-black dark:bg-white text-white dark:text-black py-12 relative">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <p className="text-gray-400 dark:text-gray-600">
-                Building quality web experiences with attention to detail.
-              </p>
-            </div>
+    <footer className="relative bg-gradient-to-b from-black via-gray-900 to-black text-gray-300 pt-16 pb-8 border-t border-gray-800">
+      {/* Glow border line */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600" />
 
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400 dark:text-gray-600">
-                {['about','experience','projects','contact'].map((id) => (
-                  <li key={id}>
-                    <a href={`#${id}`} className="hover:text-white dark:hover:text-black transition-colors">
-                      {id[0].toUpperCase() + id.slice(1)}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+      {/* Main content */}
+      <motion.div
+        className="container mx-auto px-6 text-center"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h3 className="text-xl font-semibold mb-4 text-white">
+          Let’s Build Something Great Together
+        </h3>
+        <p className="max-w-xl mx-auto text-gray-400 mb-6">
+          I’m passionate about creating intelligent systems that bridge AI and real-world impact.
+          Feel free to reach out through any of the platforms below.
+        </p>
 
-            <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-gray-400 dark:text-gray-600">
-                <li>
-                  {github ? (
-                    <a href={github} target="_blank" rel="noopener noreferrer"
-                       className="hover:text-white dark:hover:text-black transition-colors">
-                      GitHub
-                    </a>
-                  ) : <span>GitHub</span>}
-                </li>
-                <li>
-                  {linkedin ? (
-                    <a href={linkedin} target="_blank" rel="noopener noreferrer"
-                       className="hover:text-white dark:hover:text-black transition-colors">
-                      LinkedIn
-                    </a>
-                  ) : <span>LinkedIn</span>}
-                </li>
-                <li>
-                  {email ? (
-                    <a href={`mailto:${email}`}
-                       className="hover:text-white dark:hover:text-black transition-colors">
-                      Email
-                    </a>
-                  ) : <span>Email</span>}
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 dark:border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 dark:text-gray-600 flex items-center gap-2">
-              © {new Date().getFullYear()} {name}. All rights reserved.
-            </p>
-          </div>
+        {/* Social Links */}
+        <div className="flex justify-center gap-6 mb-10">
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-400 transition-colors"
+            >
+              <Github className="h-6 w-6" />
+            </a>
+          )}
+          {linkedin && (
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition-colors"
+            >
+              <Linkedin className="h-6 w-6" />
+            </a>
+          )}
+          {email && (
+            <a
+              href={`mailto:${email}`}
+              className="hover:text-emerald-400 transition-colors"
+            >
+              <Mail className="h-6 w-6" />
+            </a>
+          )}
         </div>
-      </div>
 
+        {/* Divider */}
+        <div className="border-t border-gray-800 my-6" />
+
+        {/* Copyright */}
+        <p className="text-sm text-gray-500">
+          © {new Date().getFullYear()} {name}. Crafted with ❤️ and curiosity.
+        </p>
+      </motion.div>
+
+      {/* Scroll-to-top Button */}
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 p-3 bg:white dark:bg-white text-black dark:text:white rounded-full shadow-lg hover:shadow-xl transition-shadow"
-        whileHover={{ scale: 1.1 }}
+        className="fixed bottom-8 right-8 p-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white shadow-lg hover:shadow-cyan-500/30 transition-shadow"
+        whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.9 }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
         aria-label="Scroll to top"
       >
         <ArrowUp className="h-5 w-5" />

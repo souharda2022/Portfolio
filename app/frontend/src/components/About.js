@@ -1,139 +1,139 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { usePortfolio } from '../contexts/PortfolioContext';
-import { Card, CardContent } from './ui/card';
-
-const asArr = (x) => (Array.isArray(x) ? x : []);
+import React from "react";
+import { motion } from "framer-motion";
+import { usePortfolio } from "../contexts/PortfolioContext";
+import { Card, CardContent } from "./ui/card";
 
 const About = () => {
   const { portfolio, loading } = usePortfolio();
-
   if (loading) return null;
 
-  // Safe fallbacks
   const personalInfo = portfolio?.personal_info ?? {};
-  const achievements = asArr(portfolio?.achievements);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+  const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.2 } },
   };
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-black">
-      <div className="container mx-auto px-4">
+    <section
+      id="about"
+      className="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-100 dark:from-black dark:via-gray-950 dark:to-gray-900"
+    >
+      <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+        {/* Header */}
         <motion.div
+          variants={container}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-          className="max-w-6xl mx-auto"
+          className="text-center mb-16"
         >
           <motion.h2
-            variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 text-center"
+            variants={fadeInUp}
+            className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white"
           >
             About Me
           </motion.h2>
           <motion.div
-            variants={itemVariants}
-            className="w-20 h-1 bg-black dark:bg-white mx-auto mb-12"
+            variants={fadeInUp}
+            className="mt-3 h-[3px] w-24 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full"
           />
+          <motion.p
+            variants={fadeInUp}
+            className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed"
+          >
+            I’m <span className="font-semibold text-cyan-500">{personalInfo.name || "Souharda Bhattacharjee"}</span>, 
+            an aspiring data scientist driven by curiosity, precision, and a desire to 
+            transform raw data into meaningful stories. My journey in computer science 
+            is shaped by a constant pursuit to blend <span className="text-gray-800 dark:text-gray-300 font-medium">
+            analytical reasoning</span> with <span className="text-gray-800 dark:text-gray-300 font-medium">
+            real-world impact</span>.
+          </motion.p>
+        </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold text-black dark:text-white mb-4">
-                Background
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                {personalInfo.bio || "A dedicated Data Science and Machine Learning specialist, currently pursuing a Bachelor’s degree in Computer Science, with a strong passion for uncovering insights through data and developing intelligent systems that add real value. With a foundation built on analytical problem-solving, technical precision, and collaborative teamwork, I approach every project with commitment and curiosity. My interests lie in applying data-driven approaches to complex problems, where technology, logic, and creativity come together to produce meaningful outcomes."}
-              </p>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Born on 13 October 2001 in Dhaka, Bangladesh, my academic path began at Dhanmondi Government Boys High School, where I completed my Secondary School Certificate (SSC) in 2018, followed by my Higher Secondary Certificate (HSC) from Monipur High School & College. These early experiences shaped a strong interest in mathematics, coding, and system thinking, guiding me toward the evolving fields of computer science, data analytics, and artificial intelligence. My goal is to continuously grow as a professional who bridges innovation and practical impact through data and technology.
-              </p>
-            </motion.div>
-
-            <motion.div variants={itemVariants}>
-              <Card className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 border-0">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-black dark:text-white mb-6">
-                    What I Bring
-                  </h3>
-                  <ul className="space-y-3">
- 
-                    <li className="flex items-start">
-                      <span className="text-black dark:text-white mr-2">▸</span>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        Data analytics and campaign optimization
-                      </span>
- 
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-black dark:text-white mr-2">▸</span>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        Machine learning and computer vision applications
-                      </span>
-                   </li>
-                    <li className="flex items-start">
-                      <span className="text-black dark:text-white mr-2">▸</span>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        UI/UX design with Figma and responsive implementation
-                      </span>
-
-                   </li>   
-                   <li className="flex items-start">
-                      <span className="text-black dark:text-white mr-2">▸</span>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        Full-stack development with MERN and Flask
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-black dark:text-white mr-2">▸</span>
-                      <span className="text-gray-600 dark:text-gray-400">
-                        Comprehensive QA and testing methodologies
-                      </span>
-                    </li>
-                    
-                  
-                 </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-          {/*
-          <motion.div variants={containerVariants} className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {achievements.length ? (
-              achievements.map((achievement, index) => (
-                <motion.div key={index} variants={itemVariants} whileHover={{ scale: 1.05 }}>
-                  <Card className="text-center bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 border-2 border-gray-200 dark:border-gray-700">
-                    <CardContent className="p-6">
-                      <div className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-2">
-                        {achievement?.value ?? "—"}
-                      </div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        {achievement?.label ?? ""}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))
-            ) : (
-              <div className="col-span-2 md:col-span-4 text-center text-gray-500 dark:text-gray-400">
-                No achievements yet
-              </div>
-            )}
+        {/* Content Grid */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid md:grid-cols-2 gap-12 items-start"
+        >
+          {/* LEFT: Narrative */}
+          <motion.div variants={fadeInUp}>
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              My Journey
+            </h3>
+            <p className="text-gray-700 dark:text-gray-400 leading-relaxed mb-4">
+              Born in Dhaka, Bangladesh, I began developing a fascination for
+              problem-solving early on. My academic foundation was built at
+              Dhanmondi Government Boys High School and Monipur High School &
+              College, where a love for mathematics and logic evolved into a
+              deeper curiosity about computation, systems, and intelligence.
+            </p>
+            <p className="text-gray-700 dark:text-gray-400 leading-relaxed mb-4">
+              Today, I’m pursuing a Bachelor’s in Computer Science at BRAC
+              University — exploring data science, AI, and machine learning. I
+              find inspiration in how data can explain human behavior, predict
+              outcomes, and drive innovations that improve lives.
+            </p>
+            <p className="text-gray-700 dark:text-gray-400 leading-relaxed">
+              My long-term goal is to design adaptive, ethical, and efficient AI
+              systems that bring clarity to complexity — bridging the gap
+              between human creativity and computational precision.
+            </p>
           </motion.div>
 
-        */} 
-  
+          {/* RIGHT: Skills Snapshot */}
+          <motion.div variants={fadeInUp}>
+            <Card className="bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-900 dark:to-gray-800 border border-gray-200 dark:border-gray-700 shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+                  Technical Highlights
+                </h3>
+                <ul className="space-y-4 text-gray-700 dark:text-gray-400">
+                  <li className="flex items-start">
+                    <span className="text-cyan-500 mr-2">▹</span>
+                    Data analytics, visualization & campaign optimization
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-cyan-500 mr-2">▹</span>
+                    Machine learning & computer vision solutions
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-cyan-500 mr-2">▹</span>
+                    Full-stack development with MERN and Flask
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-cyan-500 mr-2">▹</span>
+                    UI/UX prototyping in Figma with responsive design
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-cyan-500 mr-2">▹</span>
+                    Statistical modeling, QA, and testing methodologies
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </motion.div>
         </motion.div>
+
+        {/* Closing Line */}
+        <motion.p
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-16 text-center text-gray-600 dark:text-gray-400 text-lg"
+        >
+         
+        </motion.p>
       </div>
-      
     </section>
   );
 };

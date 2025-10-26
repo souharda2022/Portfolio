@@ -9,8 +9,8 @@
     "github": "https://github.com/souharda2022",
     "linkedin": "https://www.linkedin.com/in/souharda-bhattacharjee",
     "portfolio": "https://souharda2022.github.io/Portfolio/",
-    "resumeUrl": "Souharda Bhattacharjee.pdf",
-    "profileImage": "/images/souharda_bhattacharjee.png"
+    "resumeUrl": "souhardabhattacharjee.pdf",
+    "profileImage": "/images/souharda.png"
   },
 
   "achievements": [
@@ -115,6 +115,22 @@
     "demo": "",
     "image": "fuel_vec.png",
     "technologies": []
+  },
+  {
+  "id": 5,
+  "title": "Mice Protein Expression Analysis",
+  "category": "Research Project",
+  "description": "This research utilizes the Mice Protein Expression dataset from the UCI Machine Learning Repository to analyze quantitative measurements of 77 proteins in the cerebral cortex of mice across eight experimental groups. The study investigates how genotype, behavioral stimulation, and treatment influence protein expression, using machine learning to identify discriminative biomarkers.",
+  "highlights": [
+    "Performed preprocessing, normalization, and exploratory data analysis on protein datasets.",
+    "Applied classification algorithms such as Logistic Regression, KNN, and Random Forest to evaluate predictive performance.",
+    "Used PCA and feature selection to identify key proteins linked to neurological and behavioral traits.",
+    "Found significant protein subsets with strong discriminative potential as biomarkers for Down Syndrome studies."
+  ],
+  "github": "",
+  "demo": "",
+  "image": "mice_protein_analysis.png",
+  "technologies": []
   }
 ],
 
@@ -135,7 +151,7 @@
       "CI/CD test pipelines (GitHub Actions)",
       "Defect management & triage (Jira/TestRail)"
     ],
-    "tools": ["Git", "VS Code", "GA4", "Looker Studio", "Tableau", "Power BI", "Excel"],
+    "tools": ["Git", "VS Code",  "Tableau", "Power BI", "Excel"],
     "other": ["n8n", "Zapier", "Email HTML/MJML", "Figma"]
   }
 }
